@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Should I...",
+    "version": "1.0",
+    "description": "Help with arbitrary decision making.",
+    "icons": {
+        "16": "small.png",
+        "48": "large.png"
+    },
+    "browser_action": {
+        "default_title": "Should I...?",
+        "default_popup": "index.html"
+    },
+    "permissions": ["activeTab", "https://yesno.wtf/api"],
+    "content_scripts": [
+    {
+      "matches": ["https://code.jquery.com/jquery-3.1.0.js"],
+      "js": ["main.js"]
+    }
+  ]
+}
