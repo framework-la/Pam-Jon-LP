@@ -14,7 +14,8 @@
     "permissions": ["activeTab", "https://yesno.wtf/api"],
     "content_scripts": [
     {
-      "js": ["main.js", "jquery-3.1.0.js"]
+      "matches": ["http://*/*"],
+      "js": ["jquery-3.1.0.js", "main.js"]
     }
   ]
 }
