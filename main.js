@@ -10,6 +10,9 @@ function giphyCall(answer, query) {
                 var source = data.data[arraySelector].images.fixed_height.url;
                 $('#answer').text(answer);
                 $('#image').attr('src', source);
+                $('#share').text('Want to SHARE this with friends?');
+                $('#url').css('visibility', 'visible');
+                $('#url').attr({readonly:true, type:'text', value:data.data[arraySelector].bitly_url});
                 
             }
         })
