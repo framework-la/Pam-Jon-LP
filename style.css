@@ -83,7 +83,11 @@ body {
 	font-size: 15px;
 }
 
+#share {
+	margin: auto;
+}
+
 #image {
 	display: block;
-    margin: auto;
+  margin: auto;
 }

@@ -11,6 +11,9 @@ function giphyCall(answer, query) {
                 $('#answer').text(answer);
                 $('#response').css({'width': '400px', 'height': '250px'});
                 $('#image').attr('src', source);
+                $('#share').text('Want to SHARE this with friends?');
+                $('#url').css('visibility', 'visible');
+                $('#url').attr({readonly:true, type:'text', value:data.data[arraySelector].bitly_url});
                 
             }
         })
