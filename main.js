@@ -9,6 +9,7 @@ function giphyCall(answer, query) {
                 var arraySelector = Math.floor(Math.random() * 25);
                 var source = data.data[arraySelector].images.fixed_height.url;
                 $('#answer').text(answer);
+                $('#response').css({'width': '400px', 'height': '250px'});
                 $('#image').attr('src', source);
                 
             }

@@ -82,3 +82,8 @@ body {
 	font-family: Helvetica;
 	font-size: 15px;
 }
+
+#image {
+	display: block;
+    margin: auto;
+}
