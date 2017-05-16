@@ -2,21 +2,28 @@
 function giphyCall(answer, query) {
     var callUrl = "http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=dc6zaTOxFJmzC";
     $.ajax({
-            type: "GET",
-            url: callUrl,
-            dataType: "json",
-            success: function (data) {
-                var arraySelector = Math.floor(Math.random() * 25);
-                var source = data.data[arraySelector].images.fixed_height.url;
-                $('#answer').text(answer);
-                $('#response').css({'width': '400px', 'height': '250px'});
-                $('#image').attr('src', source);
-                $('#share').text('Want to SHARE this with friends?');
-                $('#url').css('visibility', 'visible');
-                $('#url').attr({readonly:true, type:'text', value:data.data[arraySelector].bitly_url});
-                
-            }
-        })
+        type: "GET",
+        url: callUrl,
+        dataType: "json",
+        success: function (data) {
+            var arraySelector = Math.floor(Math.random() * 25);
+            var source = data.data[arraySelector].images.fixed_height.url;
+            var copyLink = data.data[arraySelector].bitly_url;
+            console.log(copyLink);
+            $('#answer').text(answer);
+            $('#response').css({'width': '400px', 'height': '250px'});
+            $('#image').attr('src', source);
+            $('#share').text('Want to SHARE this with friends?');
+            $('form').css('visibility', 'visible');
+            $('#url').css('visibility', 'visible');
+            $('#url').attr({readonly:true, type:'text', value:data.data[arraySelector].bitly_url});
+            $("#copy").on('click', function (event) {
+                event.preventDefault();
+                $('#url').select();
+                document.execCommand("copy");
+            });
+        }
+    })
 };
 
 //calling Giphy function when submit button is pressed
@@ -52,7 +59,7 @@ $("#submit").on('click', function () {
         }
 })
 
-//refresh button page
+//refresh page button
 $("#refresh").on('click', function () {
     window.location.reload();
 })

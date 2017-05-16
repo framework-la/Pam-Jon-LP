@@ -3,12 +3,15 @@
 	padding: 0;
 }
 
+*:focus {
+	outline: none;
+}
+
 header {
-	display: block;
-	background: #f7f7f7;
-	height: 32px;
 	display: flex;
 	align-items: center;
+	background: #f7f7f7;
+	height: 32px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 12px;
 	padding-left: 5px;
@@ -44,9 +47,10 @@ body {
 	border-radius: 5px;
 	height: 25px;
 	width: 200px;
+	border: 2px solid #f5f5f5;
 }
 
-#submit {
+#submit, #copy {
 	margin-left: 5px;
 	border-radius: 5px;
 	padding-top: 2px;
@@ -61,7 +65,11 @@ body {
 
 #submit:hover {
 	background: #d6d6d6;
-} 	
+}
+
+#copy:hover {
+	background: #d6d6d6;
+}
 
 #answer {
 	text-align: center;
@@ -79,10 +87,20 @@ body {
   	margin: auto;
 }
 
+form {
+	display: flex;
+	flex-direction: row;
+	visibility: hidden;
+	border-radius: 5px;
+	border: 2px solid #f5f5f5;
+	padding: 3px;
+}
+
 #url {
 	display: block;
 	margin: auto;
 	border-radius: 5px;
 	height: 25px;
 	padding-left: 5px;
+	border: none;
 }
