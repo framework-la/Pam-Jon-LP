@@ -23,7 +23,9 @@ function giphyCall(answer, query) {
 $("#submit").on('click', function () {
         //check if input is populated
         var question = $('#question').val().length;
-        if (question > 0) {
+        var isInput = $('#question').val();
+        var inputArr = isInput.split('').reverse();
+        if (question > 0 && inputArr[0] === '?') {
             var num = Math.random() * 12;
             //response is "Yes!"
             if (num > 0 && num <=2){
