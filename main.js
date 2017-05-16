@@ -45,3 +45,8 @@ $("#submit").on('click', function () {
             $('#answer').text('Please ask a question!')
         }
 })
+
+//refresh button page
+$("#refresh").on('click', function () {
+    window.location.reload();
+})
