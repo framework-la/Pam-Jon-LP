@@ -1,3 +1,7 @@
+//save original window size
+var width = $('#response').width();
+var height = $('#response').height();
+
 //ajax call to Giphy
 function giphyCall(answer, query) {
     var callUrl = "http://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=dc6zaTOxFJmzC";
@@ -58,6 +62,7 @@ function runGiphy () {
             $('#share').css('display', 'none');
             $('#form').css('display', 'none');
             $('#copy').css('display', 'none');
+            $('#response').css({'width': width, 'height': height});
         }
 };
 //event listeners
