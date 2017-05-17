@@ -9,11 +9,13 @@ function giphyCall(answer, query) {
             var arraySelector = Math.floor(Math.random() * 25);
             var source = data.data[arraySelector].images.fixed_height.url;
             $('#answer').text(answer);
-            $('#response').css({'width': '400px', 'height': '250px'});
+            $('#response').css({'width': '400px', 'height': '250px', 'display': 'block'});
+            $('#form').css('display', 'flex');
             $('#image').attr('src', source);
             $('#share').text('Want to SHARE this with friends?');
-            $('form').css('visibility', 'visible');
+            $('#form').css('visibility', 'visible');
             $('#url').css('visibility', 'visible');
+            $('#copy').css('display', 'block');
             $('#url').attr({readonly:true, type:'text', value:data.data[arraySelector].bitly_url});
             $("#copy").on('click', function (event) {
                 event.preventDefault();
@@ -52,7 +54,10 @@ function runGiphy () {
             }
         } else {
             $('#image').attr('src', '');
-            $('#answer').text('Please ask a question!')
+            $('#answer').text('Please ask a question!');
+            $('#share').css('display', 'none');
+            $('#form').css('display', 'none');
+            $('#copy').css('display', 'none');
         }
 };
 //event listeners
