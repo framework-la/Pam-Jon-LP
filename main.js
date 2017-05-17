@@ -72,6 +72,16 @@ $("#question").on('keypress', function (key) {
         runGiphy();
     }
 });
+//change copy button on click
+$('#copy').on('click', function () {
+    $('#copy').text('COPIED!');
+    window.setTimeout(copyReset, 1500);
+})
+//change copy button back after timeout
+function copyReset () {
+    $('#copy').text("COPY");
+}
+
 //refresh page button
 $("#refresh").on('click', function () {
     window.location.reload();

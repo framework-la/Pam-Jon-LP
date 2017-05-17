@@ -10,12 +10,15 @@
 header {
 	display: flex;
 	align-items: center;
-	background: #f7f7f7;
+	background: #3972ce;
 	height: 32px;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 12px;
 	padding-left: 5px;
 	border-bottom: 1px solid #DDDDDD;
+	box-shadow: 0px 2px 2px #afafaf;
+	color: white;
+	margin-bottom: 10px;
 }
 
 #refresh {
@@ -42,16 +45,14 @@ body {
 
 #question {
 	font-family: 'Montserrat', sans-serif;
-	margin-left: 5px;
 	padding-left: 5px;
 	border-radius: 5px;
 	height: 25px;
-	width: 200px;
+	width: 75%;
 	border: 2px solid #f5f5f5;
 }
 
-#submit, #copy {
-	margin-left: 5px;
+#submit {
 	border-radius: 5px;
 	padding-top: 2px;
 	padding-left: 5px;
@@ -61,6 +62,19 @@ body {
 	color: #b5aeb5;
 	background: #f5f5f5;
 	border: none;
+}
+
+#copy {
+	border-radius: 5px;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	font-family: 'Montserrat', sans-serif;
+	color: #b5aeb5;
+	background: #f5f5f5;
+	border: none;
+	display: none;
 }
 
 #submit:hover {
@@ -75,25 +89,31 @@ body {
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 15px;
+	margin-bottom: 10px;
 }
 
 #share {
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 10px;
 }
 
 #image {
 	display: block;
   	margin: auto;
+	margin-bottom: 10px;
 }
 
-form {
-	display: flex;
+#form {
+	display: none;
 	flex-direction: row;
 	visibility: hidden;
 	border-radius: 5px;
 	border: 2px solid #f5f5f5;
 	padding: 3px;
+	max-width: 50%;
+	margin: auto;
+	margin-bottom: 10px;
 }
 
 #url {
@@ -103,4 +123,10 @@ form {
 	height: 25px;
 	padding-left: 5px;
 	border: none;
+}
+
+#inputWrapper {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 10px;
 }
