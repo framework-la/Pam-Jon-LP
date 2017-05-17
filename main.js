@@ -8,8 +8,6 @@ function giphyCall(answer, query) {
         success: function (data) {
             var arraySelector = Math.floor(Math.random() * 25);
             var source = data.data[arraySelector].images.fixed_height.url;
-            var copyLink = data.data[arraySelector].bitly_url;
-            console.log(copyLink);
             $('#answer').text(answer);
             $('#response').css({'width': '400px', 'height': '250px'});
             $('#image').attr('src', source);
@@ -25,10 +23,9 @@ function giphyCall(answer, query) {
         }
     })
 };
-
-//calling Giphy function when submit button is pressed
-$("#submit").on('click', function () {
-        //check if input is populated
+//calling Giphy function when submit or enter button is pressed
+function runGiphy () {
+        //check if input is populated and ends with question mark
         var question = $('#question').val().length;
         var isInput = $('#question').val();
         var inputArr = isInput.split('').reverse();
@@ -57,9 +54,15 @@ $("#submit").on('click', function () {
             $('#image').attr('src', '');
             $('#answer').text('Please ask a question!')
         }
-})
-
+};
+//event listeners
+$("#submit").on('click', runGiphy);
+$("#question").on('keypress', function (key) {
+    if (key.keyCode === 13) {
+        runGiphy();
+    }
+});
 //refresh page button
 $("#refresh").on('click', function () {
     window.location.reload();
-})
+});
