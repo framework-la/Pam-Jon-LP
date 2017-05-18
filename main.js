@@ -51,7 +51,7 @@ function runGiphy () {
                 giphyCall("No!", "no");
             //response is "No, defintely not!"
             } else if (num > 8 && num <= 10) {
-                giphyCall("No, definitely not!", "definitely+not");
+                giphyCall("No, definitely not!", "nope");
             //response is "Maybe..."
             } else if (num > 10 && num <= 12) {
                 giphyCall("Maybe...", "maybe");
